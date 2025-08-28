@@ -19,6 +19,6 @@ class ProductController extends Controller {
         ] );
 
         Product::create( $validated );
-        return redirect()->back();
+        return redirect()->back()->with( 'success', 'Product created successfully' );
     }
 }
