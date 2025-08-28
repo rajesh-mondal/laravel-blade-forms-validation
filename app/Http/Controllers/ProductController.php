@@ -16,6 +16,12 @@ class ProductController extends Controller {
             'price'       => 'required|numeric|min:3.0|max:100.0',
             'description' => 'nullable|string',
             'stock'       => 'required|boolean',
+        ], [
+            'name.min' => 'পন্যের নাম সর্বনিন্ম পাঁচ অক্ষরের হতে হবে',
+            'name.max' => 'পন্যের নাম সর্বোচ্চ পঞ্চাশ অক্ষরের হতে হবে',
+            'name.required' => 'পন্যের মূল্য দিতেই হবে',
+            'price.required' => 'মূল্য দিতেই হবে',
+            'price.min' => 'একটা পন্যের সর্বনিন্ম মূল্য ৩ টাকা হতে হবে'
         ] );
 
         Product::create( $validated );
