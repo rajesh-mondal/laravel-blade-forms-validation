@@ -8,4 +8,8 @@ class ProductController extends Controller {
     function create( Request $request ) {
         return view( 'product.store' );
     }
+
+    function store( Request $request ) {
+
+    }
 }
