@@ -14,7 +14,7 @@
             {{ session('success') }}
         </div>
     @endif
-    <form method="POST" action="{{ route('product.store') }}">
+    <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
         @csrf
         <label>Name:</label>
         <input type="text" name="name" value="{{ old('name') }}" required></br>
@@ -46,6 +46,14 @@
             <option value="0" {{ old('stock') == '0' ? 'selected' : '' }} >Out of Stock</option>
         </select></br>
         @error('stock')
+        <div style="color: red">
+            {{ $message }}
+        </div>
+        @enderror
+
+        <label>Product Image:</label>
+        <input type="file" name="product_image"><br/>
+        @error('product_image')
         <div style="color: red">
             {{ $message }}
         </div>

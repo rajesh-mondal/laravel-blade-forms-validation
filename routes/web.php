@@ -9,3 +9,7 @@ Route::get( '/', function () {
 
 Route::get( '/product/create', [ProductController::class, 'create'] )->name( 'product.create' );
 Route::post( '/product/store', [ProductController::class, 'store'] )->name( 'product.store' );
+
+route::get( '/phpinfo', function () {
+    phpinfo();
+} );
